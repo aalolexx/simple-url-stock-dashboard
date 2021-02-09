@@ -8,7 +8,7 @@ class Api {
     let interval
     switch (range) {
       case '1d':
-        interval = '5m'
+        interval = '15m'
         break
       case '5d':
         interval = '60m'
@@ -33,6 +33,7 @@ class Api {
       return response.data.chart.result[0]
     } catch (error) {
       console.log(error)
+      return null
     }
   }
 }

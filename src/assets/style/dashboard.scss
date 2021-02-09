@@ -1,0 +1,64 @@
+.dashboard {
+  .card {
+    display: inline-block;
+    margin-right: $spacer;
+    margin-bottom: $spacer * 2;
+    border: 0;
+    width: 20rem;
+
+    &__content {
+      padding: 1em;
+      border-radius: 1em;
+      height: 20rem;
+      max-width: 100%;
+      background: #ededed;
+      transition: background 0.3s;
+      position: relative;
+
+      &--green {
+        background: $color-green-light;
+        color: $color-green-dark;
+      }
+
+      &--red {
+        background: $color-red-light;
+        color: $color-red-dark;
+      }
+
+      &-chart-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        padding: $spacer;
+
+        > div {
+          position: relative;
+          height: 100%;
+        }
+      }
+
+      .current-price {
+        display: inline-block;
+        margin-right: 0.1em;
+      }
+    }
+
+    &__meta {
+      margin-top: $spacer / 2;
+
+      * {
+        margin-bottom: 0;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      
+      .card__content {
+        height: auto;
+      }
+    }
+  }
+}
