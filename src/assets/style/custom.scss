@@ -1,2 +1,10 @@
+
+// Bootstrap import
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// Bootstrap override
+@import 'variables';
+@import 'fonts';
 @import 'general';
-@import 'three';
+
+// Custom styling

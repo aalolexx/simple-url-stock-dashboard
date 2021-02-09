@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Scene/>
+    <Dashboard/>
   </div>
 </template>
 
 <script>
-import Scene from './components/Scene.vue'
+import Dashboard from './components/Dashboard.vue'
 
 export default {
   name: 'App',
   components: {
-    Scene
+    Dashboard
   }
 }
 </script>
