@@ -1,10 +1,21 @@
 .dashboard {
+  display: flex;
+  justify-content: center;
+  
+  &__container {
+    display: inline-block;
+  }
+
   .card {
     display: inline-block;
     margin-right: $spacer;
     margin-bottom: $spacer * 2;
     border: 0;
     width: 20rem;
+
+    &__container {
+      display: flex;
+    }
 
     &__content {
       padding: 1em;

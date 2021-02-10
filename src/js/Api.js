@@ -4,33 +4,20 @@ import ApiConstants from './ApiConstants'
 class Api {
   constructor () {}
 
-  static async getStockChart (symbol, range, region) {
-    let interval
-    switch (range) {
-      case '1d':
-        interval = '15m'
-        break
-      case '5d':
-        interval = '60m'
-        break
-      default:
-        interval = '1d'
-        break
-    }
-
+  static async getStockChart (symbol, range) {
     let options = {
       method: 'GET',
-      url: ApiConstants.API_ENDPOINT + 'get-chart',
-      params: {interval: interval, symbol: symbol, range: range, region: region},
-      headers: {
-        'x-rapidapi-key': ApiConstants.API_KEY,
-        'x-rapidapi-host': ApiConstants.API_HOST
+      url: ApiConstants.API_ENDPOINT + symbol + '/batch',
+      params: {
+        types: 'quote,' + (range ? 'chart' : 'intraday-prices'),
+        range: range,
+        token: ApiConstants.API_KEY
       }
     }
     
     try {
       let response = await axios.request(options)
-      return response.data.chart.result[0]
+      return response.data
     } catch (error) {
       console.log(error)
       return null
